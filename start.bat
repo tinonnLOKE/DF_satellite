@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 TITLE DF Satellite - Field Deployment Management
 echo ======================================================================
 echo           🚀 DF SATELLITE — FIELD DEPLOYMENT SUITE

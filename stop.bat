@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 TITLE DF Satellite - Stop Server
 echo ======================================================================
 echo           🛑 DF SATELLITE — STOPPING SERVER

@@ -243,6 +243,22 @@ sudo systemctl start df-satellite
 3. **Stop Application**:
    - Double-click **`stop.bat`** or close the running terminal window.
 
+#### Automatic Startup on Windows Boot (Autostart):
+To have DF Satellite launch automatically in the background whenever the Windows PC turns on or logs in:
+
+- **Option 1: 1-Click Autostart Setup (Recommended)**:
+  - Double-click **`autostart_enable.bat`**.
+  - It creates a silent startup shortcut in your Windows Startup directory that runs `start_background.vbs` without opening an intrusive command prompt window.
+  - To disable autostart later, double-click **`autostart_disable.bat`**.
+
+- **Option 2: Windows Task Scheduler (Runs even before user login)**:
+  1. Press `Win + R`, type **`taskschd.msc`**, and press Enter.
+  2. Click **Create Task...** on the right panel.
+  3. Under **General**: Name it `DF_Satellite_Server` and select *"Run whether user is logged on or not"*.
+  4. Under **Triggers**: Click **New...** -> Select **At startup** (or **At log on**).
+  5. Under **Actions**: Click **New...** -> Program: `cmd.exe`, Arguments: `/c start.bat`, Start in: `C:\DF_satellite` (your project directory).
+  6. Click **OK** to save.
+
 #### Opening Windows Defender Firewall for Factory Tablet Access:
 If tablets on the factory Wi-Fi cannot access the Windows PC at `http://<PC_IP>:3001`, run this command in **PowerShell (Run as Administrator)**:
 ```powershell
